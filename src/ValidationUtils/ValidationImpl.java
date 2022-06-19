@@ -1,5 +1,9 @@
 package ValidationUtils;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeParseException;
+import java.util.Date;
+
 public class ValidationImpl implements Validation {
 
     @Override
@@ -34,7 +38,7 @@ public class ValidationImpl implements Validation {
 
     @Override
     public boolean isEmail(String input) {
-        return input.matches("^[A-z0-9~!#$%&*-_=+|{}.?]+@[A-z0-9.-]+$");
+        return input.matches("^[A-z0-9~!#$%&*\\-_=+|{}.?]+@[A-z0-9.-]+$");
     }
 
     @Override
@@ -44,8 +48,12 @@ public class ValidationImpl implements Validation {
 
     @Override
     public boolean hasCorrectDateFormat(String input, String dateFormat) {
-        //TODO
-        return false;
+        try {
+            LocalDate.parse(input);
+            return true;
+        } catch (DateTimeParseException dtpe) {
+            return false;
+        }
     }
 
     @Override
