@@ -62,7 +62,7 @@ public interface Validation {
      * @param input 입력 값
      * @return 입력값이 날짜 형식을 따르고 있으면 true, 그렇지 않으면 false
      */
-    boolean hasCorrectDateFormat(String input, String dateFormat);
+    boolean hasCorrectDateFormat(String input);
 
     /**
      * 입력 값에서 문자(숫자를 제외한 모든 글자)를 제거한다.
