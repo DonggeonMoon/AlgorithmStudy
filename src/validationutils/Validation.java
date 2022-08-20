@@ -1,4 +1,4 @@
-package ValidationUtils;
+package validationutils;
 
 public interface Validation {
     /**
