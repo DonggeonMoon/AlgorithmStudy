@@ -12,7 +12,6 @@ public class ChildTest {
 
         for (Field field : cls.getSuperclass().getDeclaredFields()) {
             System.out.println("field.getName() = " + field.getName());
-            field.
         }
 
         for (Field field : cls.getDeclaredFields()) {
