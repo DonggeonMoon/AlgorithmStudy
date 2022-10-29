@@ -2,20 +2,14 @@ package reflection;
 
 import org.junit.jupiter.api.Test;
 import practice.Child;
-
-import java.lang.reflect.Field;
+import practice.Parent;
 
 public class ChildTest {
-    Class cls = Child.class;
+    Parent parent = new Parent();
+    Child child = new Child();
+
     @Test
     void reflectionTest() {
-
-        for (Field field : cls.getSuperclass().getDeclaredFields()) {
-            System.out.println("field.getName() = " + field.getName());
-        }
-
-        for (Field field : cls.getDeclaredFields()) {
-            System.out.println("field.getName() = " + field.getName());
-        }
+        child.listUpFields();
     }
 }

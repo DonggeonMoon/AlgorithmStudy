@@ -31,4 +31,18 @@ public class Parent {
         }
         return stringBuilder.toString();
     }
+
+    public void listUpFields() {
+        Class cls = this.getClass();
+
+        System.out.println(cls.getSuperclass().getName());
+
+        for (Field field : cls.getSuperclass().getDeclaredFields()) {
+            System.out.println("field.getName() = " + field.getName());
+        }
+        System.out.println("---------------------------");
+        for (Field field : cls.getDeclaredFields()) {
+            System.out.println("field.getName() = " + field.getName());
+        }
+    }
 }
