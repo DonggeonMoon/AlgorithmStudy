@@ -1,19 +1,18 @@
-import practice.Child;
-import practice.Parent;
+import java.io.*;
+import java.nio.charset.StandardCharsets;
 
 public class Main {
-    public static void main(String[] args) throws IllegalAccessException {
-        Parent parent = new Parent();
-        parent.setField1("1번");
-        parent.setField2("2번");
+    public static void main(String[] args) throws IOException {
+        File file = new File("test.txt");
+        FileInputStream fileInputStream = new FileInputStream(file);
+        BufferedInputStream bufferedInputStream = new BufferedInputStream(fileInputStream);
+        byte[] bytes = new byte[100];
 
-        Child child = new Child();
+        for(int i = 0; i < bytes.length; i++) {
+            bytes[i] = (byte) bufferedInputStream.read();
+        }
+        System.out.println(new String(bytes, StandardCharsets.UTF_8));
 
-        child.setField1("1번");
-        child.setField2("2번");
-        child.setField3("3번");
 
-        System.out.println("ㅇㅁㄹ");
-        System.out.println(":" + child.toStringField());
     }
 }
