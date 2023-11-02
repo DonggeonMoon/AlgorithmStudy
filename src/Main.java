@@ -1,12 +1,12 @@
-import java.io.*;
-import java.nio.charset.StandardCharsets;
+import java.io.IOException;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-        File file = new File("test.txt");
-        FileInputStream fileInputStream = new FileInputStream(file);
-        BufferedInputStream bufferedInputStream = new BufferedInputStream(fileInputStream);
-        byte[] bytes = bufferedInputStream.readAllBytes();
-        System.out.println(new String(bytes, StandardCharsets.UTF_8));
+        String a = null;
+        System.out.println("a = " + a);
+    }
+
+    public static boolean testMethod(String a) {
+        return a == null;
     }
 }

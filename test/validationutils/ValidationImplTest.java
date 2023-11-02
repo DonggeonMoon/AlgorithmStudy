@@ -4,6 +4,11 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import java.time.LocalDateTime;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
+import java.time.temporal.TemporalAccessor;
+
 class ValidationImplTest {
 
     ValidationImpl validation = new ValidationImpl();
@@ -103,5 +108,12 @@ class ValidationImplTest {
     void stripCharacters() {
         assertEquals("1234", validation.stripCharacters("1q2w3e4r"));
         assertEquals("1234", validation.stripCharacters("q1w2e3r4"));
+    }
+
+    @Test
+    void test() {
+        String time = "2:1:5";
+        LocalTime localDateTime = LocalTime.parse(time, DateTimeFormatter.ofPattern("H:m:s"));
+        System.out.println("localDateTime = " + localDateTime);
     }
 }
