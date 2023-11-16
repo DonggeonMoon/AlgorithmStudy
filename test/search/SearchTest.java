@@ -1,4 +1,4 @@
-package searchandsort.search;
+package search;
 
 import org.junit.jupiter.api.Test;
 
