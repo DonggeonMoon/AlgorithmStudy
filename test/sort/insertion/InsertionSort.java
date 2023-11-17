@@ -11,7 +11,7 @@ public class InsertionSort extends Sort {
     }
 
     @Override
-    protected void sort(final int[] numbers) {
+    public void sort(final int[] numbers) {
         for (int i = 1; i < numbers.length; i++) {
             int key = numbers[i];
 

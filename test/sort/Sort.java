@@ -7,5 +7,5 @@ public abstract class Sort {
         numbers[second] = temp;
     }
 
-    protected abstract void sort(int[] numbers);
+    public abstract void sort(int[] numbers);
 }
