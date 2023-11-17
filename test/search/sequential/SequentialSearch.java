@@ -10,7 +10,7 @@ public class SequentialSearch {
         return new SequentialSearch();
     }
 
-    public int search(int target, int[] numbers) {
+    public int search(final int[] numbers, final int target) {
         for (int i = 0; i < numbers.length; i++) {
             if (numbers[i] == target) {
                 return i;

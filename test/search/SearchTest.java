@@ -12,7 +12,7 @@ public class SearchTest {
         int[] input = {1, 3, 5, 7, 9, 11, 13, 15};
 
         SequentialSearch sequentialSearch = SequentialSearch.create();
-        int result = sequentialSearch.search(5, input);
+        int result = sequentialSearch.search(input, 5);
 
         System.out.println("The target index: " + result);
 

@@ -15,7 +15,7 @@ public class QuickSort extends Sort {
         subSort(numbers, 0, numbers.length - 1);
     }
 
-    private void subSort(int[] numbers, int low, int high) {
+    private void subSort(final int[] numbers, final int low, final int high) {
         if (low >= high) {
             return;
         }
