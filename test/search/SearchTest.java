@@ -7,7 +7,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class SearchTest {
     @Test
-    void binarySearchTest() {
+    void testBinarySearch() {
         int[] input = {1, 3, 5, 7, 9, 11, 13, 15};
 
         for (int i = 0; i < input.length; i++) {
@@ -36,7 +36,7 @@ public class SearchTest {
     }
 
     @Test
-    void interpolationSearchTest() {
+    void testInterpolationSearch() {
         int[] input = {1, 3, 5, 7, 9, 11, 13, 15};
 
         for (int i = 0; i < input.length; i++) {
@@ -67,7 +67,7 @@ public class SearchTest {
     }
 
     @Test
-    void hashSearchTest() {
+    void testHashSearch() {
         String[] inputKeys = {"사과", "바나나", "오렌지", "포도"};
         int[] inputValues = {50, 30, 20, 40};
 
@@ -116,7 +116,7 @@ public class SearchTest {
     }
 
     @Test
-    void binaryTreeSearch() {
+    void testBinaryTreeSearch() {
         BinaryTree binaryTree = new BinaryTree();
 
         binaryTree.insert(50);
@@ -229,7 +229,7 @@ public class SearchTest {
     }
 
     @Test
-    void avlTreeSearch() {
+    void testAvlTreeSearch() {
         AvlTree avlTree = new AvlTree();
         avlTree.insert(10);
         avlTree.insert(20);
