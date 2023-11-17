@@ -9,9 +9,9 @@ public class BubbleSort extends Sort {
 
         while (true) {
             boolean swapped = false;
-            for (int j = 0; j < length - 1; j++) {
-                if (numbers[j] > numbers[j + 1]) {
-                    swap(numbers, j, j + 1);
+            for (int i = 0; i < length; i++) {
+                if (numbers[i] > numbers[i + 1]) {
+                    swap(numbers, i, i + 1);
                     swapped = true;
                 }
             }
