@@ -1,6 +1,7 @@
 package sort;
 
 import org.junit.jupiter.api.Test;
+import sort.bubble.BubbleSort;
 import sort.merge.MergeSort;
 
 import java.util.Arrays;
@@ -15,23 +16,14 @@ public class SortTest {
     @Test
     void bubbleSortTest() {
         int[] input = {64, 34, 25, 12, 22, 11, 90};
+
+        BubbleSort bubbleSort = BubbleSort.create();
+
         System.out.println("Before sorting: " + Arrays.toString(input));
 
-        bubbleSort(input);
+        bubbleSort.sort(input);
 
         System.out.println("After sorting: " + Arrays.toString(input));
-    }
-
-    private void bubbleSort(int[] input) {
-        int n = input.length;
-
-        for (int i = 0; i < n - 1; i++) {
-            for (int j = 0; j < n - 1 - i; j++) {
-                if (input[j] > input[j + 1]) {
-                    swap(input, j, j + 1);
-                }
-            }
-        }
     }
 
     @Test
