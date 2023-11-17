@@ -1,51 +1,58 @@
 package search;
 
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
+import search.binary.BinarySearch;
 import search.sequential.SequentialSearch;
+import sort.bubble.BubbleSort;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class SearchTest {
-    @Test
-    void testSequentialSearch() {
+    @ParameterizedTest
+    @CsvSource({
+            "1, 0",
+            "3, 1",
+            "5, 2",
+            "7, 3",
+            "9, 4",
+            "11, 5",
+            "13, 6",
+            "15, 7"
+    })
+    void testSequentialSearch(int target, int index) {
         int[] input = {1, 3, 5, 7, 9, 11, 13, 15};
 
         SequentialSearch sequentialSearch = SequentialSearch.create();
-        int result = sequentialSearch.search(input, 5);
+        int result = sequentialSearch.search(input, target);
 
         System.out.println("The target index: " + result);
 
-        assertEquals(2, result);
+        assertEquals(index, result);
     }
 
-    @Test
-    void testBinarySearch() {
+    @ParameterizedTest
+    @CsvSource({
+            "1, 0",
+            "3, 1",
+            "5, 2",
+            "7, 3",
+            "9, 4",
+            "11, 5",
+            "13, 6",
+            "15, 7"
+    })
+    void testBinarySearch(int target, int index) {
         int[] input = {1, 3, 5, 7, 9, 11, 13, 15};
 
-        for (int i = 0; i < input.length; i++) {
-            int result = binarySearch(input, input[i]);
-            System.out.println("The target index: " + result);
-            assertEquals(i, result);
-        }
-    }
+        BinarySearch binarySearch = BinarySearch.from(BubbleSort.create());
+        int result = binarySearch.search(input, target);
 
-    private int binarySearch(int[] input, int target) {
-        int left = 0;
-        int right = input.length - 1;
+        System.out.println("The target index: " + result);
 
-        while (left <= right) {
-            int mid = left + (right - left) / 2;
-
-            if (input[mid] == target) {
-                return mid;
-            } else if (input[mid] < target) {
-                left = mid + 1;
-            } else {
-                right = mid - 1;
-            }
-        }
-        throw new NotFoundException();
+        assertEquals(index, result);
     }
 
     @Test
