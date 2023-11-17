@@ -27,32 +27,32 @@ public class MergeSort extends Sort {
         sort(group1);
         sort(group2);
 
-        int groupIndex1 = 0;
-        int groupIndex2 = 0;
-        int numberIndex = 0;
+        int group1Index = 0;
+        int group2Index = 0;
+        int numbersIndex = 0;
 
-        while (groupIndex1 < group1.length && groupIndex2 < group2.length) {
-            if (group1[groupIndex1] < group2[groupIndex2]) {
-                numbers[numberIndex] = group1[groupIndex1];
-                groupIndex1++;
-                numberIndex++;
+        while (group1Index < group1.length && group2Index < group2.length) {
+            if (group1[group1Index] < group2[group2Index]) {
+                numbers[numbersIndex] = group1[group1Index];
+                group1Index++;
+                numbersIndex++;
                 continue;
             }
-            numbers[numberIndex] = group2[groupIndex2];
-            groupIndex2++;
-            numberIndex++;
+            numbers[numbersIndex] = group2[group2Index];
+            group2Index++;
+            numbersIndex++;
         }
 
-        while (groupIndex1 < group1.length) {
-            numbers[numberIndex] = group1[groupIndex1];
-            groupIndex1++;
-            numberIndex++;
+        while (group1Index < group1.length) {
+            numbers[numbersIndex] = group1[group1Index];
+            group1Index++;
+            numbersIndex++;
         }
 
-        while (groupIndex2 < group2.length) {
-            numbers[numberIndex] = group2[groupIndex2];
-            groupIndex2++;
-            numberIndex++;
+        while (group2Index < group2.length) {
+            numbers[numbersIndex] = group2[group2Index];
+            group2Index++;
+            numbersIndex++;
         }
     }
 }
