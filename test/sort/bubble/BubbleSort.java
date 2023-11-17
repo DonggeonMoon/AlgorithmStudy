@@ -15,7 +15,7 @@ public class BubbleSort extends Sort {
                     swapped = true;
                 }
             }
-            if (swapped) {
+            if (!swapped) {
                 break;
             }
         }
