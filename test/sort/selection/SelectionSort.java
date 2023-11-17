@@ -11,17 +11,12 @@ public class SelectionSort extends Sort {
     }
 
     @Override
-    public void sort(int[] inputNumbers) {
-        for (int i = 0; i < inputNumbers.length - 1; i++) {
-            int minimumIndex = i;
-            for (int j = i + 1; j < inputNumbers.length; j++) {
-                if (inputNumbers[j] < inputNumbers[minimumIndex]) {
-                    minimumIndex = j;
-                    swap(inputNumbers, i, minimumIndex);
+    public void sort(int[] numbers) {
+        for (int i = 0; i < numbers.length - 1; i++) {
+            for (int j = i + 1; j < numbers.length; j++) {
+                if (numbers[i] > numbers[j]) {
+                    swap(numbers, i, j);
                 }
-            }
-            if (minimumIndex != i) {
-                swap(inputNumbers, i, minimumIndex);
             }
         }
     }
