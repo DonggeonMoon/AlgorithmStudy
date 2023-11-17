@@ -11,28 +11,33 @@ public class QuickSort extends Sort {
     }
 
     @Override
-    protected void sort(final int[] numbers) {
+    public void sort(final int[] numbers) {
         subSort(numbers, 0, numbers.length - 1);
     }
 
-    private void subSort(int[] numbers, int start, int end) {
-        if (end - start <= 0) {
+    private void subSort(int[] numbers, int low, int high) {
+        if (low >= high) {
             return;
         }
 
-        int pivot = numbers[end];
-        int i = start;
+        int pivotIndex = partition(numbers, low, high);
 
-        for (int j = start; j < end; j++) {
+        subSort(numbers, low, pivotIndex - 1);
+        subSort(numbers, pivotIndex + 1, high);
+    }
+
+    private int partition(final int[] numbers, final int low, final int high) {
+        int pivot = numbers[high];
+        int i = low;
+
+        for (int j = low; j < high; j++) {
             if (numbers[j] <= pivot) {
                 swap(numbers, i, j);
                 i++;
             }
-
-            swap(numbers, i, end);
         }
-        subSort(numbers, start, i - 1);
-        subSort(numbers, i + 1, end);
+        swap(numbers, i, high);
+        return i;
     }
 
 }
