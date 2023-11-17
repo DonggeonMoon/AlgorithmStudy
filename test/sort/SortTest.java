@@ -84,10 +84,11 @@ public class SortTest {
     void testMergeSort() {
         MergeSort mergeSort = MergeSort.create();
         int[] input = {64, 34, 25, 12, 22, 11, 10};
+        System.out.println("Before sorting: " + Arrays.toString(input));
 
         mergeSort.sort(input);
 
-        System.out.println(Arrays.toString(input));
+        System.out.println("After sorting: " + Arrays.toString(input));
     }
 
     @Test
