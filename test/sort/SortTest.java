@@ -14,20 +14,7 @@ public class SortTest {
     }
 
     @Test
-    void bubbleSortTest() {
-        int[] input = {64, 34, 25, 12, 22, 11, 90};
-
-        BubbleSort bubbleSort = BubbleSort.create();
-
-        System.out.println("Before sorting: " + Arrays.toString(input));
-
-        bubbleSort.sort(input);
-
-        System.out.println("After sorting: " + Arrays.toString(input));
-    }
-
-    @Test
-    void selectionSortTest() {
+    void testSelectionSort() {
         int[] input = {64, 34, 25, 12, 22, 11, 90};
         System.out.println("Before sorting: " + Arrays.toString(input));
 
@@ -55,7 +42,7 @@ public class SortTest {
     }
 
     @Test
-    void insertionSortTest() {
+    void testInsertionSort() {
         int[] input = {64, 34, 25, 12, 22, 11, 90};
         System.out.println("Before sorting: " + Arrays.toString(input));
 
@@ -81,7 +68,30 @@ public class SortTest {
     }
 
     @Test
-    void quickSortTest() {
+    void testBubbleSort() {
+        int[] input = {64, 34, 25, 12, 22, 11, 90};
+
+        BubbleSort bubbleSort = BubbleSort.create();
+
+        System.out.println("Before sorting: " + Arrays.toString(input));
+
+        bubbleSort.sort(input);
+
+        System.out.println("After sorting: " + Arrays.toString(input));
+    }
+
+    @Test
+    void testMergeSort() {
+        MergeSort mergeSort = MergeSort.create();
+        int[] input = {64, 34, 25, 12, 22, 11, 10};
+
+        mergeSort.sort(input);
+
+        System.out.println(Arrays.toString(input));
+    }
+
+    @Test
+    void testQuickSort() {
         int[] input = {64, 34, 25, 12, 22, 11, 10};
 
         System.out.println("Before sorting: " + Arrays.toString(input));
@@ -126,15 +136,5 @@ public class SortTest {
         input[high] = temp;
 
         return i + 1;
-    }
-
-    @Test
-    void mergeSortTest() {
-        MergeSort mergeSort = MergeSort.create();
-        int[] input = {64, 34, 25, 12, 22, 11, 10};
-
-        mergeSort.sort(input);
-
-        System.out.println(Arrays.toString(input));
     }
 }
