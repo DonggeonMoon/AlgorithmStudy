@@ -1,11 +1,11 @@
 package sort;
 
 import org.junit.jupiter.api.Test;
+import sort.merge.MergeSort;
 
 import java.util.Arrays;
 
 public class SortTest {
-
     private void swap(int[] input, int i, int j) {
         int temp = input[i];
         input[i] = input[j];
@@ -134,5 +134,15 @@ public class SortTest {
         input[high] = temp;
 
         return i + 1;
+    }
+
+    @Test
+    void mergeSortTest() {
+        MergeSort mergeSort = new MergeSort();
+        int[] input = {64, 34, 25, 12, 22, 11, 10};
+
+        mergeSort.sort(input);
+
+        System.out.println(Arrays.toString(input));
     }
 }
