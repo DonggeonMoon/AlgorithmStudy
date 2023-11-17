@@ -1,11 +1,24 @@
 package search;
 
 import org.junit.jupiter.api.Test;
+import search.sequential.SequentialSearch;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class SearchTest {
+    @Test
+    void testSequentialSearch() {
+        int[] input = {1, 3, 5, 7, 9, 11, 13, 15};
+
+        SequentialSearch sequentialSearch = SequentialSearch.create();
+        int result = sequentialSearch.search(5, input);
+
+        System.out.println("The target index: " + result);
+
+        assertEquals(2, result);
+    }
+
     @Test
     void testBinarySearch() {
         int[] input = {1, 3, 5, 7, 9, 11, 13, 15};
