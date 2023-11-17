@@ -3,6 +3,13 @@ package sort.bubble;
 import sort.Sort;
 
 public class BubbleSort extends Sort {
+    private BubbleSort() {
+    }
+
+    public static BubbleSort create() {
+        return new BubbleSort();
+    }
+
     @Override
     public void sort(final int[] numbers) {
         int length = numbers.length;

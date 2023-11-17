@@ -3,6 +3,12 @@ package sort.insertion;
 import sort.Sort;
 
 public class InsertionSort extends Sort {
+    private InsertionSort() {
+    }
+
+    public static InsertionSort create() {
+        return new InsertionSort();
+    }
 
     @Override
     protected void sort(final int[] numbers) {

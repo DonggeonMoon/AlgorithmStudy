@@ -5,6 +5,12 @@ import sort.Sort;
 import java.util.Arrays;
 
 public class MergeSort extends Sort {
+    private MergeSort() {
+    }
+
+    public static MergeSort create() {
+        return new MergeSort();
+    }
 
     @Override
     public void sort(final int[] numbers) {

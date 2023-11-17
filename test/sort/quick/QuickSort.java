@@ -2,7 +2,14 @@ package sort.quick;
 
 import sort.Sort;
 
-public abstract class QuickSort extends Sort {
+public class QuickSort extends Sort {
+    private QuickSort() {
+    }
+
+    public static QuickSort create() {
+        return new QuickSort();
+    }
+
     @Override
     protected void sort(final int[] numbers) {
         subSort(numbers, 0, numbers.length - 1);

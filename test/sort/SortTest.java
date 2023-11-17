@@ -138,7 +138,7 @@ public class SortTest {
 
     @Test
     void mergeSortTest() {
-        MergeSort mergeSort = new MergeSort();
+        MergeSort mergeSort = MergeSort.create();
         int[] input = {64, 34, 25, 12, 22, 11, 10};
 
         mergeSort.sort(input);
