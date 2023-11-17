@@ -16,7 +16,7 @@ public class BubbleSort extends Sort {
 
         while (true) {
             boolean swapped = false;
-            for (int i = 0; i < length; i++) {
+            for (int i = 0; i < length - 1; i++) {
                 if (numbers[i] > numbers[i + 1]) {
                     swap(numbers, i, i + 1);
                     swapped = true;
